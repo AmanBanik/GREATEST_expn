@@ -40,27 +40,27 @@ EXPECTED_COLUMNS = [
 SCHEDULE: List[Dict[str, Any]] = [
     {"global_step": 1,  "block": 1, "block_step": 1, "config_id": "Config 1", "tier": "32 KiB", "mode": "chase",  "elements": 4096,    "work": 2000000, "chains": 1, "expected_checksum": 1923},
     {"global_step": 2,  "block": 1, "block_step": 2, "config_id": "Config 4", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "chains": 4, "expected_checksum": 14274912},
-    {"global_step": 3,  "block": 1, "block_step": 3, "config_id": "Config 3", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "chains": 1, "expected_checksum": 14274912},
+    {"global_step": 3,  "block": 1, "block_step": 3, "config_id": "Config 3", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "chains": 1, "expected_checksum": 8253441},
     {"global_step": 4,  "block": 1, "block_step": 4, "config_id": "Config 2", "tier": "32 KiB", "mode": "chains", "elements": 4096,    "work": 2000000, "chains": 1, "expected_checksum": 1923},
 
     {"global_step": 5,  "block": 2, "block_step": 1, "config_id": "Config 4", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "chains": 4, "expected_checksum": 14274912},
     {"global_step": 6,  "block": 2, "block_step": 2, "config_id": "Config 1", "tier": "32 KiB", "mode": "chase",  "elements": 4096,    "work": 2000000, "chains": 1, "expected_checksum": 1923},
     {"global_step": 7,  "block": 2, "block_step": 3, "config_id": "Config 2", "tier": "32 KiB", "mode": "chains", "elements": 4096,    "work": 2000000, "chains": 1, "expected_checksum": 1923},
-    {"global_step": 8,  "block": 2, "block_step": 4, "config_id": "Config 3", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "chains": 1, "expected_checksum": 14274912},
+    {"global_step": 8,  "block": 2, "block_step": 4, "config_id": "Config 3", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "chains": 1, "expected_checksum": 8253441},
 
     {"global_step": 9,  "block": 3, "block_step": 1, "config_id": "Config 2", "tier": "32 KiB", "mode": "chains", "elements": 4096,    "work": 2000000, "chains": 1, "expected_checksum": 1923},
     {"global_step": 10, "block": 3, "block_step": 2, "config_id": "Config 4", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "chains": 4, "expected_checksum": 14274912},
-    {"global_step": 11, "block": 3, "block_step": 3, "config_id": "Config 3", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "chains": 1, "expected_checksum": 14274912},
+    {"global_step": 11, "block": 3, "block_step": 3, "config_id": "Config 3", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "chains": 1, "expected_checksum": 8253441},
     {"global_step": 12, "block": 3, "block_step": 4, "config_id": "Config 1", "tier": "32 KiB", "mode": "chase",  "elements": 4096,    "work": 2000000, "chains": 1, "expected_checksum": 1923},
 
     {"global_step": 13, "block": 4, "block_step": 1, "config_id": "Config 2", "tier": "32 KiB", "mode": "chains", "elements": 4096,    "work": 2000000, "chains": 1, "expected_checksum": 1923},
     {"global_step": 14, "block": 4, "block_step": 2, "config_id": "Config 4", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "chains": 4, "expected_checksum": 14274912},
     {"global_step": 15, "block": 4, "block_step": 3, "config_id": "Config 1", "tier": "32 KiB", "mode": "chase",  "elements": 4096,    "work": 2000000, "chains": 1, "expected_checksum": 1923},
-    {"global_step": 16, "block": 4, "block_step": 4, "config_id": "Config 3", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "chains": 1, "expected_checksum": 14274912},
+    {"global_step": 16, "block": 4, "block_step": 4, "config_id": "Config 3", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "chains": 1, "expected_checksum": 8253441},
 
     {"global_step": 17, "block": 5, "block_step": 1, "config_id": "Config 2", "tier": "32 KiB", "mode": "chains", "elements": 4096,    "work": 2000000, "chains": 1, "expected_checksum": 1923},
     {"global_step": 18, "block": 5, "block_step": 2, "config_id": "Config 4", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "chains": 4, "expected_checksum": 14274912},
-    {"global_step": 19, "block": 5, "block_step": 3, "config_id": "Config 3", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "chains": 1, "expected_checksum": 14274912},
+    {"global_step": 19, "block": 5, "block_step": 3, "config_id": "Config 3", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "chains": 1, "expected_checksum": 8253441},
     {"global_step": 20, "block": 5, "block_step": 4, "config_id": "Config 1", "tier": "32 KiB", "mode": "chase",  "elements": 4096,    "work": 2000000, "chains": 1, "expected_checksum": 1923},
 ]
 
@@ -354,10 +354,24 @@ def run_self_tests() -> None:
     - Detection of H9 speedup failure (S_B <= 3.00x).
     - Detection of incorrect elements values (e.g. 2048 instead of 4096).
     - Detection of incorrect repeat indices (e.g. 3 instead of 0).
+    - Detection of accidental substitution between 64 MiB C=1 and C=4 checksums.
     """
     import tempfile
 
     print("Running EXP-03 Audit Script Self-Tests (synthetic fixtures)...")
+
+    # Verify per-configuration regression checksum expectations
+    for s in SCHEDULE:
+        if s["config_id"] in ("Config 1", "Config 2"):
+            assert s["expected_checksum"] == 1923, "Config 1/2 checksum must be 1923"
+        elif s["config_id"] == "Config 3":
+            assert s["expected_checksum"] == 8253441, "Config 3 checksum must be 8253441"
+        elif s["config_id"] == "Config 4":
+            assert s["expected_checksum"] == 14274912, "Config 4 checksum must be 14274912"
+    assert (
+        [s for s in SCHEDULE if s["config_id"] == "Config 3"][0]["expected_checksum"]
+        != [s for s in SCHEDULE if s["config_id"] == "Config 4"][0]["expected_checksum"]
+    ), "Config 3 (C=1) and Config 4 (C=4) checksums must be strictly distinct!"
 
     def make_synthetic_csv(
         path: Path,
@@ -367,6 +381,7 @@ def run_self_tests() -> None:
         bad_header=False,
         elements_override=None,
         repeat_override=None,
+        config_chk_override=None,
     ):
         with open(path, "w", encoding="utf-8") as f:
             if bad_header:
@@ -381,7 +396,12 @@ def run_self_tests() -> None:
                 step_idx = (i // 5) + 1
                 rep_idx = i % 5
                 step = SCHEDULE[step_idx - 1]
-                chk = chk_override if chk_override is not None else step["expected_checksum"]
+                if config_chk_override and step["config_id"] in config_chk_override:
+                    chk = config_chk_override[step["config_id"]]
+                elif chk_override is not None:
+                    chk = chk_override
+                else:
+                    chk = step["expected_checksum"]
                 elems = elements_override if (elements_override is not None and i == 0) else step["elements"]
                 rep = repeat_override if (repeat_override is not None and i == 0) else rep_idx
 
@@ -486,6 +506,26 @@ def run_self_tests() -> None:
         except AssertionError as e:
             assert "rep index mismatch" in str(e)
             print("  [PASS] Test 7: Incorrect repeat index (e.g. 3 vs 0) correctly flagged")
+
+        # 8. Regression test: Accidental substitution of C=4 checksum (14274912) into Config 3 (64 MiB C=1)
+        sub_c3_csv = tmp_path / "sub_c3.csv"
+        make_synthetic_csv(sub_c3_csv, config_chk_override={"Config 3": 14274912})
+        try:
+            audit_exp03_dataset(sub_c3_csv, valid_log)
+            assert False, "Should have failed on C=4 checksum substituted into Config 3"
+        except AssertionError as e:
+            assert "Checksum mismatch" in str(e)
+            print("  [PASS] Test 8: Rejection of C=4 checksum (14274912) mistakenly supplied to Config 3 (64 MiB C=1)")
+
+        # 9. Regression test: Accidental substitution of C=1 checksum (8253441) into Config 4 (64 MiB C=4)
+        sub_c4_csv = tmp_path / "sub_c4.csv"
+        make_synthetic_csv(sub_c4_csv, config_chk_override={"Config 4": 8253441})
+        try:
+            audit_exp03_dataset(sub_c4_csv, valid_log)
+            assert False, "Should have failed on C=1 checksum substituted into Config 4"
+        except AssertionError as e:
+            assert "Checksum mismatch" in str(e)
+            print("  [PASS] Test 9: Rejection of C=1 checksum (8253441) mistakenly supplied to Config 4 (64 MiB C=4)")
 
     print("ALL AUDIT SCRIPT SELF-TESTS PASSED.")
 

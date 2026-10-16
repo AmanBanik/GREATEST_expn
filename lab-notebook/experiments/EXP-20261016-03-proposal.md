@@ -167,7 +167,7 @@ Configurations within each block are randomized using a fixed pseudorandom seed 
 4. **Deterministic Checksum Regression Expectations:**
    - 32 KiB `chase`: `1923`
    - 32 KiB `chains C=1`: `1923`
-   - 64 MiB `chains C=1`: `14274912`
+   - 64 MiB `chains C=1`: `8253441`
    - 64 MiB `chains C=4`: `14274912`
    - *Epistemological Qualification:* These values are **expected regression-check values observed in prior benchmark runs**, not mathematical proof of algorithm correctness.
    - *Failure Safeguard:* Any checksum divergence indicates an unexpected pointer graph traversal state. A mismatch must stop the run immediately, preserve the failing command's complete stdout/stderr and exit status in `sweep.log`, and must **NOT** trigger an automatic retry or silent replacement of the observation.

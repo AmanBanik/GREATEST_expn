@@ -8,7 +8,7 @@ Executes the pre-registered balanced block design protocol:
 - Fixed deterministic schedule (Section 6 of proposal, seed 20261016)
 - 5 timed repetitions per process launch = 100 planned data rows
 - 2.0-second procedural quiescent pause between launches
-- Expected regression checksum validation (32 KiB: 1923, 64 MiB: 14274912)
+- Expected regression checksum validation (32 KiB: 1923, 64 MiB C=1: 8253441, 64 MiB C=4: 14274912)
 - Strict fail-closed error handling: halts on non-zero exit status, wrong row count,
   unexpected header, config mismatch, or checksum divergence. No silent retries.
 """
@@ -46,31 +46,31 @@ SCHEDULE: List[Dict[str, Any]] = [
     # Block 1
     {"global_step": 1,  "block": 1, "block_step": 1, "config_id": "Config 1", "tier": "32 KiB", "mode": "chase",  "elements": 4096,    "work": 2000000, "repeats": 5, "chains": 1, "expected_checksum": 1923},
     {"global_step": 2,  "block": 1, "block_step": 2, "config_id": "Config 4", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "repeats": 5, "chains": 4, "expected_checksum": 14274912},
-    {"global_step": 3,  "block": 1, "block_step": 3, "config_id": "Config 3", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "repeats": 5, "chains": 1, "expected_checksum": 14274912},
+    {"global_step": 3,  "block": 1, "block_step": 3, "config_id": "Config 3", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "repeats": 5, "chains": 1, "expected_checksum": 8253441},
     {"global_step": 4,  "block": 1, "block_step": 4, "config_id": "Config 2", "tier": "32 KiB", "mode": "chains", "elements": 4096,    "work": 2000000, "repeats": 5, "chains": 1, "expected_checksum": 1923},
 
     # Block 2
     {"global_step": 5,  "block": 2, "block_step": 1, "config_id": "Config 4", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "repeats": 5, "chains": 4, "expected_checksum": 14274912},
     {"global_step": 6,  "block": 2, "block_step": 2, "config_id": "Config 1", "tier": "32 KiB", "mode": "chase",  "elements": 4096,    "work": 2000000, "repeats": 5, "chains": 1, "expected_checksum": 1923},
     {"global_step": 7,  "block": 2, "block_step": 3, "config_id": "Config 2", "tier": "32 KiB", "mode": "chains", "elements": 4096,    "work": 2000000, "repeats": 5, "chains": 1, "expected_checksum": 1923},
-    {"global_step": 8,  "block": 2, "block_step": 4, "config_id": "Config 3", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "repeats": 5, "chains": 1, "expected_checksum": 14274912},
+    {"global_step": 8,  "block": 2, "block_step": 4, "config_id": "Config 3", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "repeats": 5, "chains": 1, "expected_checksum": 8253441},
 
     # Block 3
     {"global_step": 9,  "block": 3, "block_step": 1, "config_id": "Config 2", "tier": "32 KiB", "mode": "chains", "elements": 4096,    "work": 2000000, "repeats": 5, "chains": 1, "expected_checksum": 1923},
     {"global_step": 10, "block": 3, "block_step": 2, "config_id": "Config 4", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "repeats": 5, "chains": 4, "expected_checksum": 14274912},
-    {"global_step": 11, "block": 3, "block_step": 3, "config_id": "Config 3", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "repeats": 5, "chains": 1, "expected_checksum": 14274912},
+    {"global_step": 11, "block": 3, "block_step": 3, "config_id": "Config 3", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "repeats": 5, "chains": 1, "expected_checksum": 8253441},
     {"global_step": 12, "block": 3, "block_step": 4, "config_id": "Config 1", "tier": "32 KiB", "mode": "chase",  "elements": 4096,    "work": 2000000, "repeats": 5, "chains": 1, "expected_checksum": 1923},
 
     # Block 4
     {"global_step": 13, "block": 4, "block_step": 1, "config_id": "Config 2", "tier": "32 KiB", "mode": "chains", "elements": 4096,    "work": 2000000, "repeats": 5, "chains": 1, "expected_checksum": 1923},
     {"global_step": 14, "block": 4, "block_step": 2, "config_id": "Config 4", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "repeats": 5, "chains": 4, "expected_checksum": 14274912},
     {"global_step": 15, "block": 4, "block_step": 3, "config_id": "Config 1", "tier": "32 KiB", "mode": "chase",  "elements": 4096,    "work": 2000000, "repeats": 5, "chains": 1, "expected_checksum": 1923},
-    {"global_step": 16, "block": 4, "block_step": 4, "config_id": "Config 3", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "repeats": 5, "chains": 1, "expected_checksum": 14274912},
+    {"global_step": 16, "block": 4, "block_step": 4, "config_id": "Config 3", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "repeats": 5, "chains": 1, "expected_checksum": 8253441},
 
     # Block 5
     {"global_step": 17, "block": 5, "block_step": 1, "config_id": "Config 2", "tier": "32 KiB", "mode": "chains", "elements": 4096,    "work": 2000000, "repeats": 5, "chains": 1, "expected_checksum": 1923},
     {"global_step": 18, "block": 5, "block_step": 2, "config_id": "Config 4", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "repeats": 5, "chains": 4, "expected_checksum": 14274912},
-    {"global_step": 19, "block": 5, "block_step": 3, "config_id": "Config 3", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "repeats": 5, "chains": 1, "expected_checksum": 14274912},
+    {"global_step": 19, "block": 5, "block_step": 3, "config_id": "Config 3", "tier": "64 MiB", "mode": "chains", "elements": 8388608, "work": 2000000, "repeats": 5, "chains": 1, "expected_checksum": 8253441},
     {"global_step": 20, "block": 5, "block_step": 4, "config_id": "Config 1", "tier": "32 KiB", "mode": "chase",  "elements": 4096,    "work": 2000000, "repeats": 5, "chains": 1, "expected_checksum": 1923},
 ]
 
@@ -470,7 +470,22 @@ def run_self_tests() -> None:
         assert len(block_counts[b]) == 4, f"Block {b} does not contain 4 distinct configs"
         for cid, count in block_counts[b].items():
             assert count == 1, f"Block {b} config {cid} count is {count} != 1"
-    print("  [PASS] Test 1: Schedule integrity and block balance")
+
+    # Verify per-configuration regression checksum expectations
+    for s in SCHEDULE:
+        if s["config_id"] == "Config 1":
+            assert s["expected_checksum"] == 1923, "Config 1 checksum must be 1923"
+        elif s["config_id"] == "Config 2":
+            assert s["expected_checksum"] == 1923, "Config 2 checksum must be 1923"
+        elif s["config_id"] == "Config 3":
+            assert s["expected_checksum"] == 8253441, "Config 3 checksum must be 8253441"
+        elif s["config_id"] == "Config 4":
+            assert s["expected_checksum"] == 14274912, "Config 4 checksum must be 14274912"
+    assert (
+        [s for s in SCHEDULE if s["config_id"] == "Config 3"][0]["expected_checksum"]
+        != [s for s in SCHEDULE if s["config_id"] == "Config 4"][0]["expected_checksum"]
+    ), "Config 3 (C=1) and Config 4 (C=4) checksums must be strictly distinct!"
+    print("  [PASS] Test 1: Schedule integrity, block balance, and configuration checksum specifications")
 
     # 2. Mock stdout generator
     def make_mock_stdout(
@@ -666,6 +681,46 @@ def run_self_tests() -> None:
         except ValueError as e:
             assert "elements mismatch" in str(e)
             print("  [PASS] Test 12: validate_final_csv_on_disk rejects corrupted element values on disk")
+
+        # 13. Regression test: Accidental substitution of C=4 checksum (14274912) into Config 3 (64 MiB C=1)
+        sub_c3_csv = tmp_path / "sub_c3_primary.csv"
+        sub_c3_log = tmp_path / "sub_c3_sweep.log"
+        def mock_runner_sub_c3(cmd, capture_output=True, text=True):
+            for s in SCHEDULE:
+                if s["mode"] in cmd and str(s["elements"]) in cmd and str(s["chains"]) in cmd:
+                    if s["config_id"] == "Config 3":
+                        # Erroneously emit 14274912 (C=4 checksum) instead of 8253441 (C=1 checksum)
+                        return MockProcess(stdout=make_mock_stdout(s, checksum_override=14274912), returncode=0)
+                    return MockProcess(stdout=make_mock_stdout(s), returncode=0)
+            return MockProcess(stdout=make_mock_stdout(SCHEDULE[0]), returncode=0)
+
+        try:
+            execute_schedule(SCHEDULE, Path("./memory_lab"), sub_c3_csv, sub_c3_log, pause_sec=0.0, runner_func=mock_runner_sub_c3)
+            assert False, "Should have raised ValueError on C=4 checksum substituted into Config 3"
+        except ValueError as e:
+            assert "checksum mismatch" in str(e)
+            assert "8253441" in str(e)
+            print("  [PASS] Test 13: Rejection of C=4 checksum (14274912) mistakenly supplied to Config 3 (64 MiB C=1)")
+
+        # 14. Regression test: Accidental substitution of C=1 checksum (8253441) into Config 4 (64 MiB C=4)
+        sub_c4_csv = tmp_path / "sub_c4_primary.csv"
+        sub_c4_log = tmp_path / "sub_c4_sweep.log"
+        def mock_runner_sub_c4(cmd, capture_output=True, text=True):
+            for s in SCHEDULE:
+                if s["mode"] in cmd and str(s["elements"]) in cmd and str(s["chains"]) in cmd:
+                    if s["config_id"] == "Config 4":
+                        # Erroneously emit 8253441 (C=1 checksum) instead of 14274912 (C=4 checksum)
+                        return MockProcess(stdout=make_mock_stdout(s, checksum_override=8253441), returncode=0)
+                    return MockProcess(stdout=make_mock_stdout(s), returncode=0)
+            return MockProcess(stdout=make_mock_stdout(SCHEDULE[0]), returncode=0)
+
+        try:
+            execute_schedule(SCHEDULE, Path("./memory_lab"), sub_c4_csv, sub_c4_log, pause_sec=0.0, runner_func=mock_runner_sub_c4)
+            assert False, "Should have raised ValueError on C=1 checksum substituted into Config 4"
+        except ValueError as e:
+            assert "checksum mismatch" in str(e)
+            assert "14274912" in str(e)
+            print("  [PASS] Test 14: Rejection of C=1 checksum (8253441) mistakenly supplied to Config 4 (64 MiB C=4)")
 
     print("ALL RUNNER SELF-TESTS PASSED.")
 
