@@ -25,8 +25,8 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 # --- Paths & Hashes ---
-PRIMARY_CSV = Path("lab-notebook/raw/EXP-20261016-03-primary.csv")
-SWEEP_LOG = Path("lab-notebook/raw/EXP-20261016-03-sweep.log")
+PRIMARY_CSV = Path("lab-notebook/raw/EXP-20261016-03-run2-primary.csv")
+SWEEP_LOG = Path("lab-notebook/raw/EXP-20261016-03-run2-sweep.log")
 BINARY_PATH = Path("./memory_lab").resolve()
 SOURCE_PATH = Path("src/memory_lab.cpp").resolve()
 

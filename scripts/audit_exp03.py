@@ -23,8 +23,8 @@ from typing import Any, Dict, List, Tuple
 import numpy as np
 
 # --- Paths & Hashes ---
-PRIMARY_CSV = Path("lab-notebook/raw/EXP-20261016-03-primary.csv")
-SWEEP_LOG = Path("lab-notebook/raw/EXP-20261016-03-sweep.log")
+PRIMARY_CSV = Path("lab-notebook/raw/EXP-20261016-03-run2-primary.csv")
+SWEEP_LOG = Path("lab-notebook/raw/EXP-20261016-03-run2-sweep.log")
 BINARY_PATH = Path("./memory_lab").resolve()
 SOURCE_PATH = Path("src/memory_lab.cpp").resolve()
 
@@ -533,8 +533,8 @@ def run_self_tests() -> None:
 def main():
     parser = argparse.ArgumentParser(description="EXP-20261016-03 Data Audit & Statistical Analysis")
     parser.add_argument("--self-test", action="store_true", help="Run comprehensive in-memory unit tests on synthetic fixtures")
-    parser.add_argument("--csv", type=Path, default=PRIMARY_CSV, help="Path to primary CSV (default: lab-notebook/raw/EXP-20261016-03-primary.csv)")
-    parser.add_argument("--log", type=Path, default=SWEEP_LOG, help="Path to sweep log (default: lab-notebook/raw/EXP-20261016-03-sweep.log)")
+    parser.add_argument("--csv", type=Path, default=PRIMARY_CSV, help="Path to primary CSV (default: lab-notebook/raw/EXP-20261016-03-run2-primary.csv)")
+    parser.add_argument("--log", type=Path, default=SWEEP_LOG, help="Path to sweep log (default: lab-notebook/raw/EXP-20261016-03-run2-sweep.log)")
     args = parser.parse_args()
 
     if args.self_test:
