@@ -18,16 +18,13 @@
 
 ---
 
-## Proposed Draft Hypotheses for EXP-20261016-03 (DRAFT — NOT APPROVED)
+## Evaluated Hypotheses for EXP-20261016-03 (Run 2)
 
-> [!NOTE]
-> The following hypotheses are currently in **DRAFT** status within [`EXP-20261016-03-proposal.md`](file:///home/amans/Devfield2/experiment/memory-wall/lab-notebook/experiments/EXP-20261016-03-proposal.md). They are not pre-registered as active until execution approval is granted.
-
-| ID | Date Drafted | Experiment ID | Hypothesis Summary | Measurable Prediction | Falsification / Guardrail Conditions | Outcome / Status |
+| ID | Date Registered | Experiment ID | Hypothesis Summary | Measurable Prediction | Falsification / Guardrail Conditions | Outcome / Status |
 |---|---|---|---|---|---|---|
-| **H7** | 2026-10-16 (Draft) | `EXP-20261016-03` | Kernel Equivalence (Descriptive Heuristic) | At 32 KiB, overall median amortized latency of `chains C=1` matches `chase` within $\pm 5.0\%$: $$-5.0\% \le \frac{\text{Med}(\text{chains } C=1) - \text{Med}(\text{chase})}{\text{Med}(\text{chase})} \times 100\% \le +5.0\%$$ | $|\Delta_{\text{kernel}}| > 5.0\%$ indicates kernel loop structure materially alters baseline. *Guardrail:* Descriptive heuristic only; 5 blocks do not establish formal statistical equivalence. | **Draft Proposal** (Awaiting Approval) |
-| **H8** | 2026-10-16 (Draft) | `EXP-20261016-03` | Measurement Stability & Dispersion | Inter-block median spread ($\max_B - \min_B$) and coefficient of variation ($\text{CV}_B$) across 5 balanced blocks will characterize run-to-run dispersion under process interleaving. | *Guardrail:* Comparing EXP-02 and EXP-03 variability is an informative descriptive comparison, not a controlled causal proof that run order caused earlier drift. | **Draft Proposal** (Awaiting Approval) |
-| **H9** | 2026-10-16 (Draft) | `EXP-20261016-03` | Within-Block MLP Speedup Robustness | In **every individual block** $B \in \{1 \dots 5\}$, within-block speedup $$S_B = \frac{\text{Median}(64\text{M, chains } C=1)_B}{\text{Median}(64\text{M, chains } C=4)_B}$$ will strictly exceed $3.0\times$ ($S_B > 3.00\times$). | Any block where $S_B \le 3.00\times$ falsifies H9 and shows host performance shifts can compress apparent MLP speedup. | **Draft Proposal** (Awaiting Approval) |
+| **H7** | 2026-10-16 | `EXP-20261016-03` | Kernel Equivalence (Descriptive Heuristic) | At 32 KiB, overall median amortized latency of `chains C=1` matches `chase` within $\pm 5.0\%$: $$-5.0\% \le \frac{\text{Med}(\text{chains } C=1) - \text{Med}(\text{chase})}{\text{Med}(\text{chase})} \times 100\% \le +5.0\%$$ | $|\Delta_{\text{kernel}}| > 5.0\%$ indicates kernel loop structure materially alters baseline. *Guardrail:* Descriptive heuristic only; 5 blocks do not establish formal statistical equivalence. | **Supported (Practical Equivalence)** (Observed: 32K chase = 0.9554 ns/op, chains C=1 = 0.9887 ns/op; $\Delta_{\text{kernel}} = +3.49\%$, within $\pm 5.0\%$ band) |
+| **H8** | 2026-10-16 | `EXP-20261016-03` | Measurement Stability & Dispersion | Inter-block median spread ($\max_B - \min_B$) and coefficient of variation ($\text{CV}_B$) across 5 balanced blocks will characterize run-to-run dispersion under process interleaving. | *Guardrail:* Comparing EXP-02 and EXP-03 variability is an informative descriptive comparison, not a controlled causal proof that run order caused earlier drift. | **Consistent with drift moderation at L1; DRAM variability persists** (32 KiB drift bounded at 6.72%–8.06% compared to +40.22% in EXP-02; 64 MiB timing variability persisted at ~23% across launches) |
+| **H9** | 2026-10-16 | `EXP-20261016-03` | Within-Block Concurrency Speedup Robustness | In **every individual block** $B \in \{1 \dots 5\}$, within-block speedup $$S_B = \frac{\text{Median}(64\text{M, chains } C=1)_B}{\text{Median}(64\text{M, chains } C=4)_B}$$ will strictly exceed $3.0\times$ ($S_B > 3.00\times$). | Any block where $S_B \le 3.00\times$ falsifies H9 and shows host performance shifts can compress apparent MLP speedup. | **Supported** (Observed within-block speedups across Blocks 1–5: $4.41\times$, $3.42\times$, $4.35\times$, $4.20\times$, $4.26\times$; all strictly exceed $3.00\times$; overall median ratio is $4.21\times$) |
 
 ---
 
@@ -40,5 +37,6 @@
 - **Revision 5.0 (2026-10-16T15:58:00Z):** Replaced categorical labels with descriptive tier labels (small, intermediate, large); framed nominal cache capacities as architectural hypotheses rather than residency guarantees.
 - **Post-Execution Evaluation (2026-10-16T16:16:56Z):** Evaluated EXP-20261016-02: H4 supported with nuance; H5 strongly supported (13.66x MLP speedup in large tier); H6 supported (8.29x intermediate scaling).
 - **Draft Proposal Addition (2026-10-16T17:23:00Z):** Added draft hypotheses H7, H8, H9 for `EXP-20261016-03` pending execution approval.
+- **Post-Execution Evaluation (2026-10-16T21:28:11Z):** Evaluated EXP-20261016-03 Run 2: H7 supported (practical equivalence within +3.49%); H8 consistent with L1 drift moderation while 64 MiB variability persists; H9 supported (all 5 blocks strictly exceed 3.00x).
 
 

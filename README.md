@@ -2,6 +2,8 @@
 
 This version is designed for a **clean, prospective start**. It contains no imported chat notes, old experiment outputs, or historical reconstruction workflow. It will establish a baseline and record work from the point the toolkit is installed.
 
+See [`RESEARCH-INDEX.md`](file:///home/amans/Devfield2/experiment/memory-wall/RESEARCH-INDEX.md) for master campaign navigation, verified empirical findings, reproduction commands, and publication figure links.
+
 ## Install
 1. Back up anything you care about. Do not delete the existing project source.
 2. Copy `.agent/` and `lab-notebook/` into the root of the existing `memory-wall` project. Merge carefully if either directory already exists.
