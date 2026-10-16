@@ -100,7 +100,12 @@ Configurations within each block are randomized using a fixed pseudorandom seed 
 
 ### Procedural Pause Control
 - A uniform **2.0-second quiescent sleep** will be executed between consecutive process launches.
-- *Methodological Qualification:* This pause is a procedural spacing control to permit clean OS process termination and buffer flushing; it is **NOT** assumed or described as proof of thermal equilibrium or scheduler stabilization.
+- *Methodological Qualification:* This pause is a procedural spacing control to permit clean OS process termination and buffer flushing; it is **NOT** assumed or described as evidence that temperature, CPU frequency, or hypervisor thread scheduling has stabilized.
+
+### Schedule Properties & Temporal Confounding Qualification
+- **Block Balance vs. Position Balance:** Each of the 4 configurations appears exactly once per block across all 5 blocks. However, within-block execution position is determined by the PRNG seed (`20261016`) and is not evenly balanced across positions (e.g., Config 2 occupies Step 1 in blocks 3, 4, and 5; Config 4 occupies Step 2 in blocks 1, 3, 4, and 5).
+- **Reduction, Not Elimination, of Confounding:** Interleaving configurations across 5 blocks substantially reduces the monotonic ordering bias present in the continuous ascending sweeps of EXP-01 and EXP-02; it does not eliminate all temporal confounding.
+- **Descriptive Status of H8:** H8 is an observational summary of between-block dispersion. Because EXP-02 and EXP-03 have structurally different experimental designs, comparing their variability cannot establish that process launch order caused the verification drift observed in EXP-02.
 
 ### Process Independence Qualification
 - Launching separate processes guarantees independent virtual address spaces, heap allocations, and Linux process descriptor contexts.
@@ -159,6 +164,22 @@ Configurations within each block are randomized using a fixed pseudorandom seed 
    - `src/memory_lab.cpp` SHA-256: `b4a2b26240633d4546295f2c1b7996ea283aa49a5e4b9fc27fefc836b0bb9e2b`
    - `memory_lab` binary SHA-256: `9c71a0984e4001bac4a60b6bfcfbcce9e0cd1e760e9024dafc9a042c8cb390a0`
    - Existing CSVs, logs, and experiment records for EXP-01 and EXP-02 remain untouched.
+4. **Deterministic Checksum Regression Expectations:**
+   - 32 KiB `chase`: `1923`
+   - 32 KiB `chains C=1`: `1923`
+   - 64 MiB `chains C=1`: `14274912`
+   - 64 MiB `chains C=4`: `14274912`
+   - *Epistemological Qualification:* These values are **expected regression-check values observed in prior benchmark runs**, not mathematical proof of algorithm correctness.
+   - *Failure Safeguard:* Any checksum divergence indicates an unexpected pointer graph traversal state. A mismatch must stop the run immediately, preserve the failing command's complete stdout/stderr and exit status in `sweep.log`, and must **NOT** trigger an automatic retry or silent replacement of the observation.
+5. **Raw CSV Collection, Header Handling, and Schedule Mapping:**
+   - **Binary Output Behavior:** Each invocation of `memory_lab` emits a 1-line CSV header (`mode,elements,working_set_bytes,work_count,chains,repeat,seconds,operations,ns_per_operation,nominal_bytes,checksum`) followed by 5 data rows (one per repetition, `rep=0` through `rep=4`).
+   - **Runner Header Handling:** The orchestrator writes a single canonical CSV header once when creating [`lab-notebook/raw/EXP-20261016-03-primary.csv`](file:///home/amans/Devfield2/experiment/memory-wall/lab-notebook/raw/EXP-20261016-03-primary.csv). For each process launch, the runner strips the per-process emitted header from stdout, validates that exactly 5 data rows were produced, and appends those 5 data rows to `primary.csv`. This avoids repeated header lines while preserving the binary's native 11-column CSV schema.
+   - **Complete Provenance in Sweep Log:** The raw, unstripped stdout (including the per-launch header) and stderr, along with command string, timestamp, and exit status, are preserved in full in [`lab-notebook/raw/EXP-20261016-03-sweep.log`](file:///home/amans/Devfield2/experiment/memory-wall/lab-notebook/raw/EXP-20261016-03-sweep.log). Malformed output is never silently repaired.
+   - **Row-to-Schedule Mapping:** Exactly 100 data rows are produced across the 20 launches (5 timed observations per launch). Each 1-indexed data row $i \in [1, 100]$ in `primary.csv` maps unambiguously to the fixed 20-step schedule:
+     - Schedule Step index: $S = \lfloor(i - 1) / 5\rfloor + 1 \in [1, 20]$
+     - Repetition index: $R = (i - 1) \pmod 5 \in [0, 4]$
+     - Block, Block Step, Working Set, Mode, and Chains are looked up directly from Step $S$ of the Section 6 schedule table.
+   - **Integrity Assertion:** If any launch returns a non-zero exit code or emits anything other than exactly 5 data rows, execution halts immediately; no observations will be fabricated, imputed, or silently replaced.
 
 ---
 
