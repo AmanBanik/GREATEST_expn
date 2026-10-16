@@ -1,0 +1,5 @@
+Source restoration successful.
+Destination: src/memory_lab.cpp
+Total lines: 192
+Byte size: 7274
+SHA-256: b4a2b26240633d4546295f2c1b7996ea283aa49a5e4b9fc27fefc836b0bb9e2b

@@ -1,0 +1,120 @@
+CPU MEMORY LAB READ-ONLY PREFLIGHT
+timestamp_utc=2026-10-16T13:29:29Z
+working_directory=/home/amans/Devfield2/experiment/memory-wall
+
+===== COMMAND: uname -a =====
+Linux AlphOmen 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+[exit_status=0]
+
+===== COMMAND: cat /etc/os-release =====
+PRETTY_NAME="Ubuntu 24.04.4 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.4 LTS (Noble Numbat)"
+VERSION_CODENAME=noble
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=noble
+LOGO=ubuntu-logo
+[exit_status=0]
+wsl_detected=yes
+
+===== COMMAND: lscpu =====
+Architecture:                         x86_64
+CPU op-mode(s):                       32-bit, 64-bit
+Address sizes:                        39 bits physical, 48 bits virtual
+Byte Order:                           Little Endian
+CPU(s):                               24
+On-line CPU(s) list:                  0-23
+Vendor ID:                            GenuineIntel
+Model name:                           Intel(R) Core(TM) i7-14650HX
+CPU family:                           6
+Model:                                183
+Thread(s) per core:                   2
+Core(s) per socket:                   12
+Socket(s):                            1
+Stepping:                             1
+BogoMIPS:                             4838.39
+Flags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves avx_vnni vnmi umip waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64b fsrm md_clear serialize flush_l1d arch_capabilities
+Virtualization:                       VT-x
+Hypervisor vendor:                    Microsoft
+Virtualization type:                  full
+L1d cache:                            576 KiB (12 instances)
+L1i cache:                            384 KiB (12 instances)
+L2 cache:                             24 MiB (12 instances)
+L3 cache:                             30 MiB (1 instance)
+NUMA node(s):                         1
+NUMA node0 CPU(s):                    0-23
+Vulnerability Gather data sampling:   Not affected
+Vulnerability Itlb multihit:          Not affected
+Vulnerability L1tf:                   Not affected
+Vulnerability Mds:                    Not affected
+Vulnerability Meltdown:               Not affected
+Vulnerability Mmio stale data:        Not affected
+Vulnerability Reg file data sampling: Mitigation; Clear Register File
+Vulnerability Retbleed:               Mitigation; Enhanced IBRS
+Vulnerability Spec rstack overflow:   Not affected
+Vulnerability Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:             Mitigation; Enhanced / Automatic IBRS; IBPB conditional; RSB filling; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S
+Vulnerability Srbds:                  Not affected
+Vulnerability Tsx async abort:        Not affected
+[exit_status=0]
+
+===== COMMAND: free -h =====
+               total        used        free      shared  buff/cache   available
+Mem:            11Gi       1.9Gi       9.4Gi       3.6Mi       578Mi       9.7Gi
+Swap:          8.0Gi          0B       8.0Gi
+[exit_status=0]
+
+===== COMMAND: g++ --version =====
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[exit_status=0]
+
+===== COMMAND: cmake --version =====
+cmake version 3.28.3
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+[exit_status=0]
+
+===== COMMAND: make --version =====
+GNU Make 4.3
+Built for x86_64-pc-linux-gnu
+Copyright (C) 1988-2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+[exit_status=0]
+
+===== COMMAND: perf --version =====
+WARNING: perf not found for kernel 6.6.87.2-microsoft
+
+  You may need to install the following packages for this specific kernel:
+    linux-tools-6.6.87.2-microsoft-standard-WSL2
+    linux-cloud-tools-6.6.87.2-microsoft-standard-WSL2
+
+  You may also want to install one of the following packages to keep up to date:
+    linux-tools-standard-WSL2
+    linux-cloud-tools-standard-WSL2
+[exit_status=2]
+
+===== COMMAND: ls /sys/bus/event_source/devices =====
+breakpoint
+kprobe
+msr
+power
+software
+tracepoint
+uprobe
+[exit_status=0]
+git_repository=not_detected
+
+NOTE: This script does not inspect source code or execute the benchmark. Agent must inspect src/memory_lab.cpp manually before proposing any build/run command.

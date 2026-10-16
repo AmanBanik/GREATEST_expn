@@ -1,0 +1,8 @@
+# Experiment Index
+
+| ID | Date/time + timezone | Question | Protocol | Result file | Status |
+|---|---|---|---|---|---|
+| **EXP-20261016-01** | 2026-10-16T14:56:16Z (UTC) | How does elapsed time per dependent pointer step change from 16 KiB to 64 MiB? | [`EXP-20261016-01-protocol.md`](file:///home/amans/Devfield2/experiment/memory-wall/lab-notebook/experiments/EXP-20261016-01-protocol.md) | [`EXP-20261016-01-primary.csv`](file:///home/amans/Devfield2/experiment/memory-wall/lab-notebook/raw/EXP-20261016-01-primary.csv) | Completed (Validated) |
+| **EXP-20261016-02** | 2026-10-16T16:15:46Z (UTC) | How does varying independent pointer chain count (1..16) impact latency across 32 KiB, 1 MiB, and 64 MiB tiers? | [`EXP-20261016-02-protocol.md`](file:///home/amans/Devfield2/experiment/memory-wall/lab-notebook/experiments/EXP-20261016-02-protocol.md) | [`EXP-20261016-02-primary.csv`](file:///home/amans/Devfield2/experiment/memory-wall/lab-notebook/raw/EXP-20261016-02-primary.csv) | Completed (Validated) |
+| **EXP-20261016-03** | 2026-10-16T17:22:00Z (UTC) | How do run order, independent process launches, and kernel choice (chase vs chains C=1) impact measurement stability and MLP speedup under a balanced block design? | [`EXP-20261016-03-proposal.md`](file:///home/amans/Devfield2/experiment/memory-wall/lab-notebook/experiments/EXP-20261016-03-proposal.md) | Pending execution approval | Draft Proposal (Not Approved) |
+

@@ -1,0 +1,27 @@
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials/
+
+# Local editor and operating-system noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Local build output — adjust to actual project paths
+build/
+cmake-build-*/
+memory_lab

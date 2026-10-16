@@ -1,0 +1,17 @@
+=== PRE-COMPILATION CHECKS ===
+Check src/memory_lab.cpp:
+-rw-r--r-- 1 amans amans 7274 Oct 16 13:42 src/memory_lab.cpp
+Check g++ availability:
+/usr/bin/g++
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Check memory_lab executable non-existence:
+memory_lab does not exist. Safe to proceed.
+
+=== COMPILATION ===
+Command: g++ -O3 -DNDEBUG -march=native -std=c++20 -Wall -Wextra src/memory_lab.cpp -o memory_lab
+EXIT_STATUS=0
+
+=== BINARY VERIFICATION ===
+-rwxr-xr-x 1 amans amans 32400 Oct 16 13:46 memory_lab
+9c71a0984e4001bac4a60b6bfcfbcce9e0cd1e760e9024dafc9a042c8cb390a0  memory_lab
+memory_lab: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=45d541682ac3cff60c2543068abf469d68158bae, for GNU/Linux 3.2.0, not stripped

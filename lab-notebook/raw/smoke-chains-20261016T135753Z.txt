@@ -1,0 +1,16 @@
+=== PRE-EXECUTION CHECKS ===
+Binary path: ./memory_lab
+-rwxr-xr-x 1 amans amans 32400 Oct 16 13:46 ./memory_lab
+Binary SHA-256:
+9c71a0984e4001bac4a60b6bfcfbcce9e0cd1e760e9024dafc9a042c8cb390a0  ./memory_lab
+Command to execute: ./memory_lab chains 32768 2000000 5 4
+
+=== SMOKE TEST EXECUTION ===
+mode,elements,working_set_bytes,work_count,chains,repeat,seconds,operations,ns_per_operation,nominal_bytes,checksum
+chains,32768,262144,2000000,4,0,0.013217086,8000000,1.65213575,64000000,67007
+chains,32768,262144,2000000,4,1,0.011286177,8000000,1.410772125,64000000,67007
+chains,32768,262144,2000000,4,2,0.011118672,8000000,1.389834,64000000,67007
+chains,32768,262144,2000000,4,3,0.009487769,8000000,1.185971125,64000000,67007
+chains,32768,262144,2000000,4,4,0.010723373,8000000,1.340421625,64000000,67007
+
+EXIT_STATUS=0

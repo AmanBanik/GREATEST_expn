@@ -1,0 +1,26 @@
+=== PRE-GENERATION CHECKS ===
+1. Verify src/memory_lab.cpp SHA-256:
+Actual:   b4a2b26240633d4546295f2c1b7996ea283aa49a5e4b9fc27fefc836b0bb9e2b
+Expected: b4a2b26240633d4546295f2c1b7996ea283aa49a5e4b9fc27fefc836b0bb9e2b
+Source hash verified.
+
+2. Verify binary memory_lab SHA-256:
+Actual:   9c71a0984e4001bac4a60b6bfcfbcce9e0cd1e760e9024dafc9a042c8cb390a0
+Expected: 9c71a0984e4001bac4a60b6bfcfbcce9e0cd1e760e9024dafc9a042c8cb390a0
+Binary hash verified.
+
+3. GCC Version:
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+
+4. Output destination check:
+results/memory_lab.s does not exist. Safe to create.
+
+=== ASSEMBLY GENERATION ===
+Command: g++ -O3 -DNDEBUG -march=native -std=c++20 -S -masm=intel src/memory_lab.cpp -o results/memory_lab.s
+EXIT_STATUS=0
+
+=== GENERATED ASSEMBLY METADATA ===
+-rw-r--r-- 1 amans amans 75399 Oct 16 14:20 results/memory_lab.s
+3623 results/memory_lab.s
+74dd7b0c7c8b046afffdfef9d6fcfcfbb068a16617b48bb150b6bb30493db592  results/memory_lab.s

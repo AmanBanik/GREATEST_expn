@@ -1,0 +1,4 @@
+  File "<string>", line 44
+    print(f"Byte size: {len(code.encode(\"utf-8\"))}")
+                                         ^
+SyntaxError: unexpected character after line continuation character

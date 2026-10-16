@@ -1,0 +1,38 @@
+Inventory timestamp: 2026-10-16T13:29:43Z
+Working directory: /home/amans/Devfield2/experiment/memory-wall
+
+File inventory (size, mtime, sha256, path):
+    3246 | 1792156929.6824396 | 67cbc212ca66d6372ba0dc157380a1e472fb698a9dfdaf5378806cd1c3c4d5e1 | ./AGENT.md
+    2018 | 1792156929.6924396 | bfa269099f76f864f8c8eed68bbf5ffe3868e0e80590159d27ca57eef39c1445 | ./README.md
+   29394 | 1792156647.2684827 | 00a3b0030c136c48123c30cf0cf71003a9f2a4a4db313d48afc60efbab6c08e0 | ./.agent/references/cpu_memory_experiments_field_guide.md
+    2158 | 1792156647.2684827 | 6344668099d1cdff7eaa27a54af3bafb178216999967dd67033cb74426852de3 | ./.agent/rules/00-project-mission.md
+    2977 | 1792156647.2684827 | 4fa6d610e6224f89978dbc76e8262f7111cfaf859abd9118557efd030cf4bedb | ./.agent/rules/01-evidence-and-logging.md
+    1148 | 1792156647.2684827 | d6d5e2fbd4e2961b0c591210289f9d5e2d98449ed0fbd8d5acd5f082a048825f | ./.agent/rules/02-safe-tool-use.md
+    1379 | 1792156647.2684827 | 428a6e84dff8254d3b1e7b22091130e485f6d25adad54c867e8015256dc1e277 | ./.agent/rules/03-writing-style.md
+     416 | 1792156647.2684827 | 89d382faff717a7da370f48ae7879042b08636537495c7d6892bba1aaf146a88 | ./.agent/scripts/README.md
+    1881 | 1792156647.2684827 | 67459f44856a993b620b8af0baa885e34db95775562597ff67c9d921ff18de84 | ./.agent/scripts/preflight_readonly.sh
+     142 | 1792156647.2684827 | 5e2245f2655f6266657b1e12cf15efc74be176a5572d97f517744554c2319182 | ./.agent/templates/blog-evidence-map.md
+     746 | 1792156647.2684827 | 7b5dd2b38ecc1c38a14ea4d767cb681e57d6d5a64f278cb88a0a68eb17216be7 | ./.agent/templates/command-capture.md
+     152 | 1792156647.2684827 | 7bfb4055b54274c9625779761c9e397a6e0003feeecd99545f2077039e529246 | ./.agent/templates/decision-log.md
+     121 | 1792156647.2684827 | 5c090dad9e4bf99a3dbabe4fe3b96103f4b34d364dfbfb26c01499910b1f8e56 | ./.agent/templates/experiment-index.md
+    1428 | 1792156647.2684827 | 09473c7a7b2d73f95461c97b30f4021ed0a0c4f5264a654b8868cf792621a9f4 | ./.agent/templates/experiment-record.md
+     178 | 1792156647.2684827 | 91639dfebbe12d13673a0d5ad55fe29fe3aba134911e4ccc01fdd412d8d39a96 | ./.agent/templates/hypothesis-register.md
+     993 | 1792156647.2684827 | 96a8a4da10d87e64e8151649df4d00bfa6ed637dc10cea4d18e044d8334e7627 | ./.agent/templates/session-log.md
+    1166 | 1792156647.2684827 | a88a2b3f0a7dc0876ba0c861f8bacf8c8900e5170f4e8ac52b9fca8e1f116653 | ./.agent/workflows/analyze-results.md
+    1216 | 1792156647.2684827 | d17eb24815dcac094f72194b3c20a75bffc1d375b23f4fe0e0271c56eebc99ba | ./.agent/workflows/fresh-start.md
+    1371 | 1792156647.2684827 | ac545a6f80fdbad1b70dae826c20fae891f9c16f0f523106ed141614bf42df44 | ./.agent/workflows/inspect-assembly.md
+    3154 | 1792156647.2684827 | 7c2d40a06b2de6941fa5f978f0b6193c8b630b95be8c3c7d762664252e7157b4 | ./.agent/workflows/preflight-before-anything.md
+    1248 | 1792156647.2684827 | 086e0d4af4ef963a8acbef388e5b6662e4ef7c99194562a2557bfc0a32cfd0d3 | ./.agent/workflows/prepare-blog.md
+    1492 | 1792156647.2684827 | 62b41d396e535c3930a1b60c5b745bc1bf240545ada93da1f771e3f883864e70 | ./.agent/workflows/run-experiment.md
+    1034 | 1792156647.2684827 | 2d961083498b82c0f908a28c9d3a23c331fff9154ce2bdd36ad7b1ff283e1b77 | ./.agent/workflows/start-session.md
+     602 | 1792156929.699444 | 169c368dc8349b9de795ede89b05ba1f30be4d9c6f1b50b592533a9b250ecbb1 | ./lab-notebook/README.md
+     227 | 1792156929.7074442 | 5bbe3307cbfad7ec5eee4458f3349adf8448ab21c3fcc2e9f4b257cec0461912 | ./lab-notebook/blog/EVIDENCE-MAP.md
+     149 | 1792156929.7580068 | 8e4ef29ba851721112310575361854d20743f04feeed86ca3c1eb65a4eed9bce | ./lab-notebook/decisions/DECISIONS.md
+     156 | 1792156929.749007 | 503e7bd8675ab78bf87446ee12f54089e88007986452033f913eec0d56b4b527 | ./lab-notebook/environment/README.md
+     167 | 1792156929.7240067 | b153068f3befda72f690fbdb39385b08945f4ebc2af5960957c53d93c6b30059 | ./lab-notebook/experiments/HYPOTHESES.md
+     232 | 1792156929.7320073 | 1415ab5bbe3897195185ad78e9356f8752b12ff4a576c7065d587349ffd6f398 | ./lab-notebook/experiments/INDEX.md
+     223 | 1792156929.7280076 | a1569848311af5c3e8a36c8523fa091a0f3cd05686f5f15e8bdbcfc6ae0f676b | ./lab-notebook/experiments/README.md
+     146 | 1792156929.7400057 | 8d3ef86354649b8eb13d61da80097d9fbe6dc33543eb088a8bb264eac41aa82a | ./lab-notebook/raw/README.md
+       0 | 1792157383.781498 | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 | ./lab-notebook/raw/inventory-20261016T132839Z.txt
+    5454 | 1792157369.3055112 | d822826867a753f40f3f3fddbc34630d322fe76604404d3a36daa9a0e4930622 | ./lab-notebook/raw/preflight-readonly-20261016T132839Z.txt
+     174 | 1792156929.7160065 | 205c393bdb956d5d103b122b7078e447a5a3ab9c3707d50d252415bb9f72d54a | ./lab-notebook/sessions/README.md
