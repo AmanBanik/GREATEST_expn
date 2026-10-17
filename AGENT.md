@@ -1,6 +1,6 @@
 # AGENT.md — CPU Memory Lab: Authoritative Operating Contract
 
-This file is the top-level project instruction. Read it before any action, then read `.agent/rules/`, `.agent/GIT_WORKFLOW.md`, and the relevant workflow. The full experimental specification is `.agent/references/cpu_memory_experiments_field_guide.md`; master navigation is at `RESEARCH-INDEX.md`; preserve all caveats and terminology.
+This file is the top-level project instruction. Read it before any action, then read `.agent/rules/`, `.agent/GIT_WORKFLOW.md`, and the relevant workflow. The public research overview is at `README.md`; the Antigravity Fresh Start agent setup guide is preserved at `BASE_INSTRUCTIONS.md`; the full experimental specification is `.agent/references/cpu_memory_experiments_field_guide.md`; master navigation is at `RESEARCH-INDEX.md`; preserve all caveats and terminology.
 
 ## Non-negotiable order of operations
 1. **Preflight before action.** First inspect project tree, current working directory, OS/kernel/WSL context, source files, build artifacts, Git status, available tools, and existing notebook state. Use read-only commands only. Capture outputs and exit statuses.

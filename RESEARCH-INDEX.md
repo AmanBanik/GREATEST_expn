@@ -94,7 +94,9 @@ python3 scripts/plot_exp03.py
 
 ## 6. Operating Standards & Version Control
 
-- **Authoritative Contract:** [`AGENT.md`](file:///home/amans/Devfield2/experiment/memory-wall/AGENT.md)
-- **Field Guide Reference:** [`cpu_memory_experiments_field_guide.md`](file:///home/amans/Devfield2/experiment/memory-wall/.agent/references/cpu_memory_experiments_field_guide.md)
-- **Git & GitHub Workflow:** [`.agent/GIT_WORKFLOW.md`](file:///home/amans/Devfield2/experiment/memory-wall/.agent/GIT_WORKFLOW.md)
+- **Canonical Public Overview:** [`README.md`](README.md)
+- **Agent Setup & Instructions:** [`BASE_INSTRUCTIONS.md`](BASE_INSTRUCTIONS.md)
+- **Authoritative Contract:** [`AGENT.md`](AGENT.md)
+- **Field Guide Reference:** [`cpu_memory_experiments_field_guide.md`](.agent/references/cpu_memory_experiments_field_guide.md)
+- **Git & GitHub Workflow:** [`.agent/GIT_WORKFLOW.md`](.agent/GIT_WORKFLOW.md)
 - **Target GitHub Remote:** `https://github.com/AmanBanik/GREATEST_expn.git` (Private)
