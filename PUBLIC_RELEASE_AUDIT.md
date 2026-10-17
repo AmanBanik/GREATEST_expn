@@ -123,10 +123,9 @@ All tracked core research artifacts match their established cryptographic baseli
 
 ---
 
-## 7. Unresolved Decisions Requiring Human Approval
+## 7. Publication Status & Release Completion
 
-Before executing any external publication, git push, or visibility change:
-1. **Review and approve the new [`README.md`](README.md) and [`BASE_INSTRUCTIONS.md`](BASE_INSTRUCTIONS.md).**
-2. **Select and authorize a repository license** (e.g., MIT, Apache 2.0).
-3. **Confirm target public repository name and remote URL** on GitHub.
-4. **Insert the live Medium article URL** into `README.md` once published.
+1. **Repository License:** Established ([`MIT License`](LICENSE), Copyright (c) 2026 Aman Banik).
+2. **Canonical Overview:** Created ([`README.md`](README.md)) with live Medium article link embedded.
+3. **Agent Setup:** Preserved ([`BASE_INSTRUCTIONS.md`](BASE_INSTRUCTIONS.md)).
+4. **Medium Technical Article:** Live at [https://medium.com/@amanbaniksr75/the-hard-part-wasnt-making-it-faster-it-was-trusting-the-numbers-a3644dc59639](https://medium.com/@amanbaniksr75/the-hard-part-wasnt-making-it-faster-it-was-trusting-the-numbers-a3644dc59639).

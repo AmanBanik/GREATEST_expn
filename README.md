@@ -2,8 +2,7 @@
 
 A reproducible systems-performance research repository investigating pointer chasing, cache hierarchy latency regimes, and memory-level parallelism (MLP) on modern x86-64 hardware.
 
-> **Accompanying Article:** *The Hard Part Wasn't Making It Faster. It Was Trusting the Numbers.*  
-> *(Publication link pending — [Editorial Placeholder: Medium Technical Article])*
+> **Accompanying Article:** [*The Hard Part Wasn't Making It Faster. It Was Trusting the Numbers.*](https://medium.com/@amanbaniksr75/the-hard-part-wasnt-making-it-faster-it-was-trusting-the-numbers-a3644dc59639)
 
 ---
 
